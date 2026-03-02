@@ -42,7 +42,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-10 w-40">
+          <div className="relative h-14 w-60 md:h-16 md:w-[520px]">
             <Image
               src="/brand/logo.png"
               alt="Purified Services"
