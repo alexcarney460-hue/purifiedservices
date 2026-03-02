@@ -25,9 +25,17 @@ export default async function AdminRequestsPage() {
             <H1>Requests</H1>
             <div className="mt-5">
               <Lead>
-                Coming next: scheduling approvals queue (pending → approved/denied) + service
-                requests.
+                Scheduling approvals queue (pending → approved/denied) + service requests.
               </Lead>
+            </div>
+            <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="text-sm font-semibold text-[var(--ps-teal)]">Scheduling v1</div>
+              <p className="mt-2 text-sm text-slate-600">
+                Backend storage is next. For now, customers can submit a preferred day request.
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Next: persist requests in Supabase + approve/deny + assign day/window.
+              </p>
             </div>
           </div>
         </Container>

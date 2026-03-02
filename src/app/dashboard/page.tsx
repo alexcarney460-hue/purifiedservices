@@ -61,6 +61,21 @@ export default async function DashboardPage() {
 
       <Section>
         <Container>
+          <div className="mb-6 flex flex-wrap gap-3">
+            <Link
+              href="/schedule"
+              className="rounded-xl bg-[var(--ps-navy)] px-5 py-3 text-sm font-semibold text-white"
+            >
+              Request a service day
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900"
+            >
+              New request
+            </Link>
+          </div>
+
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <H2>Upcoming service</H2>
