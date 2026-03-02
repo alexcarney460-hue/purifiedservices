@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { Container, H1, H2, Lead, Section } from "@/components/ui";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { isAdminEmail } from "@/lib/authz";
 
 export const metadata = { title: "Dashboard" };
 
@@ -27,6 +28,17 @@ export default async function DashboardPage() {
                   : "Log in to view history, scheduling, and performance."}
               </Lead>
             </div>
+            {user && isAdminEmail(user.email) ? (
+              <div className="mt-6">
+                <Link
+                  href="/admin"
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900"
+                >
+                  Go to Admin
+                </Link>
+              </div>
+            ) : null}
+
             {!user ? (
               <div className="mt-6 flex gap-3">
                 <Link
