@@ -40,15 +40,14 @@ function ButtonLink({
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-      <div className="flex w-full items-center justify-between gap-4 pl-0 pr-4 py-1">
-        <Link href="/" className="flex min-w-0 items-center gap-3 pl-2">
-          <div className="relative h-28 w-[600px] sm:h-36 sm:w-[820px] md:h-44 md:w-[1040px] flex-none -mt-1">
-            {/* Note: object-contain limits perceived size if source bitmap is low-res. */}
+      <div className="flex w-full items-center justify-between gap-4 pl-0 pr-3 py-1">
+        <Link href="/" className="flex min-w-0 items-center gap-3 pl-3">
+          <div className="relative h-24 w-[520px] sm:h-28 sm:w-[680px] md:h-32 md:w-[780px] flex-none -mt-1">
             <Image
               src="/brand/logo.png"
               alt="Purified Services"
               fill
-              className="object-contain"
+              className="object-contain object-left"
               priority
             />
           </div>
