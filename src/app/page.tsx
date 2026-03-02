@@ -43,18 +43,18 @@ export default function Home() {
 
           {/* Path chooser */}
           <div className="mt-12 grid gap-4 md:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="text-sm font-semibold text-[var(--ps-teal)]">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md hover:shadow-slate-900/10">
+              <div className="text-xs font-semibold tracking-wide text-[var(--ps-teal)]">
                 Commercial / Institutional
               </div>
-              <div className="mt-2 text-xl font-bold text-slate-950">
+              <div className="mt-2 text-xl font-bold tracking-tight text-slate-950">
                 Facilities that need consistency
               </div>
               <p className="mt-2 text-sm text-slate-600">
                 Apartments • Hotels • Schools • Gyms. Walkthrough quotes and facility-ready
                 documentation.
               </p>
-              <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
                 <Button href="/commercial" variant="primary">
                   Commercial Pools
                 </Button>
@@ -62,15 +62,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="text-sm font-semibold text-[var(--ps-teal)]">Residential</div>
-              <div className="mt-2 text-xl font-bold text-slate-950">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md hover:shadow-slate-900/10">
+              <div className="text-xs font-semibold tracking-wide text-[var(--ps-teal)]">Residential</div>
+              <div className="mt-2 text-xl font-bold tracking-tight text-slate-950">
                 Homeowners who want it done right
               </div>
               <p className="mt-2 text-sm text-slate-600">
                 Weekly service, green-to-clean, and repair support—clear communication included.
               </p>
-              <div className="mt-4">
+              <div className="mt-5">
                 <Button href="/residential" variant="primary">
                   Residential Pools
                 </Button>
