@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const phoneDigits = "15595190335";
@@ -40,17 +41,20 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
-        <div className="flex items-center gap-3">
-          <div className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--ps-mist)] text-[var(--ps-teal)]">
-            <span className="text-sm font-extrabold">PS</span>
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative h-10 w-40">
+            <Image
+              src="/brand/logo.png"
+              alt="Purified Services"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <div className="leading-tight">
-            <div className="text-sm font-extrabold tracking-wide text-slate-950">
-              Purified Services
-            </div>
+          <div className="hidden leading-tight sm:block">
             <div className="text-xs text-slate-600">Water systems • Central Valley</div>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
           <NavLink href="/commercial">Commercial</NavLink>
