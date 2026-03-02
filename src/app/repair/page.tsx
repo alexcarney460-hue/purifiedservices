@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Pool Repair",
+  title: "Pool Repair (Fresno / Clovis)",
+  description:
+    "Pool repair and diagnostics in Fresno, Clovis, and the Central Valley. Pumps, filters, heaters, leaks. Same-day urgent response (Mon–Sat).",
 };
 
 export default function RepairPage() {
@@ -32,6 +34,11 @@ export default function RepairPage() {
                 Text {phoneDisplay}
               </Button>
             </div>
+            <p className="mt-6 text-sm text-slate-600">
+              Need <span className="font-semibold">pool repair</span> in <span className="font-semibold">Fresno</span>
+              or <span className="font-semibold">Clovis</span>? We diagnose the issue, explain the fix clearly,
+              and help you get back to stable circulation, filtration, and water quality.
+            </p>
           </div>
         </Container>
       </Section>

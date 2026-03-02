@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Residential Pool Service",
+  title: "Residential Pool Service (Fresno / Clovis)",
+  description:
+    "Weekly residential pool service in Fresno, Clovis, and surrounding Central Valley areas. Clean water, consistent service, and clear communication.",
 };
 
 export default function ResidentialPage() {
@@ -32,6 +34,11 @@ export default function ResidentialPage() {
                 Text {phoneDisplay}
               </Button>
             </div>
+            <p className="mt-6 text-sm text-slate-600">
+              Weekly <span className="font-semibold">residential pool service</span> for
+              <span className="font-semibold"> Fresno</span> and <span className="font-semibold">Clovis</span>
+              homeowners—consistent chemistry, clean water, and straightforward communication.
+            </p>
           </div>
         </Container>
       </Section>

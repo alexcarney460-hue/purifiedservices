@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Service Areas",
+  title: "Service Areas (Fresno / Clovis / Central Valley)",
+  description:
+    "Service areas for Fresno Pool Care: Fresno, Clovis, and coverage across the Central Valley for residential and commercial clients.",
 };
 
 export default function ServiceAreasPage() {

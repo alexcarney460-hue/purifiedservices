@@ -1,13 +1,13 @@
+"use client";
+
+import { useRef } from "react";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { Button, Container, H1, Lead, Section } from "@/components/ui";
+import QuickChips from "@/components/QuickChips";
 
 const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
-
-export const metadata = {
-  title: "Request Service",
-};
 
 function Field({
   label,
@@ -38,21 +38,21 @@ function Field({
   );
 }
 
-function Textarea({ label, name, placeholder }: { label: string; name: string; placeholder?: string }) {
-  return (
-    <label className="grid gap-2 text-sm">
-      <span className="font-semibold text-slate-900">{label}</span>
-      <textarea
-        name={name}
-        placeholder={placeholder}
-        rows={5}
-        className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
-      />
-    </label>
-  );
-}
-
 export default function ContactPage() {
+  const commercialNotesRef = useRef<HTMLTextAreaElement | null>(null);
+  const residentialNotesRef = useRef<HTMLTextAreaElement | null>(null);
+
+  function applyChip(value: string) {
+    // Put chip selection into the most relevant notes field.
+    // Default to residential notes unless commercial form is visible/used.
+    const target = residentialNotesRef.current || commercialNotesRef.current;
+    if (!target) return;
+
+    const current = target.value?.trim();
+    target.value = current ? `${current}\n${value}` : value;
+    target.focus();
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
@@ -70,6 +70,13 @@ export default function ContactPage() {
                 Typical replies: <span className="font-semibold">within 2 business hours</span> (Mon–Sat).
               </div>
             </div>
+            <div className="mt-6">
+              <div className="text-xs font-semibold tracking-wide text-slate-500">Quick select</div>
+              <div className="mt-2">
+                <QuickChips onPick={applyChip} />
+              </div>
+            </div>
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={`sms:+${phoneDigits}`} variant="primary">
                 Text {phoneDisplay}
@@ -98,22 +105,25 @@ export default function ContactPage() {
               <Field label="Email" name="email" placeholder="name@company.com" type="email" />
               <Field label="Site address(es)" name="sites" placeholder="Address or list of sites" required />
               <Field label="Pool/spa count" name="pool_count" placeholder="e.g., 1 pool + 1 spa" required />
-              <Field
-                label="Access constraints"
-                name="access"
-                placeholder="Gates, keys, after-hours rules…"
-              />
+              <Field label="Access constraints" name="access" placeholder="Gates, keys, after-hours rules…" />
               <Field
                 label="Best time to contact"
                 name="best_time"
                 placeholder="e.g., weekdays 9–12, or anytime"
               />
             </div>
-            <Textarea
-              label="Walkthrough availability + notes"
-              name="notes"
-              placeholder="Best days/times for a walkthrough, access notes, current issues, desired start date…"
-            />
+            <label className="grid gap-2 text-sm">
+              <span className="font-semibold text-slate-900">Walkthrough availability + notes</span>
+              <textarea
+                ref={(el) => {
+                  commercialNotesRef.current = el;
+                }}
+                name="notes"
+                placeholder="Best days/times for a walkthrough, access notes, current issues, desired start date…"
+                rows={5}
+                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
+              />
+            </label>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/thanks-commercial" variant="primary">
                 Submit request
@@ -142,11 +152,18 @@ export default function ContactPage() {
                 placeholder="e.g., weekdays after 5, or anytime"
               />
             </div>
-            <Textarea
-              label="Notes"
-              name="res_notes"
-              placeholder="Anything we should know about access, equipment, or current issues?"
-            />
+            <label className="grid gap-2 text-sm">
+              <span className="font-semibold text-slate-900">Notes</span>
+              <textarea
+                ref={(el) => {
+                  residentialNotesRef.current = el;
+                }}
+                name="res_notes"
+                placeholder="Anything we should know about access, equipment, or current issues?"
+                rows={5}
+                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
+              />
+            </label>
             <Button href="/thanks-residential" variant="primary">
               Submit request
             </Button>

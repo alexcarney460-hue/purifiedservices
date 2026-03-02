@@ -18,21 +18,21 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3005";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Purified Services | Fresno Pool Care",
-    template: "%s | Purified Services",
+    default: "Fresno Pool Care | Commercial & Residential Pool Service",
+    template: "%s | Fresno Pool Care",
   },
   description:
     "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Commercial & Residential Pool Service | Purified Services",
+    title: "Fresno Pool Care | Commercial & Residential Pool Service",
     description:
       "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial & Residential Pool Service | Purified Services",
+    title: "Fresno Pool Care | Commercial & Residential Pool Service",
     description:
       "Commercial and residential pool service across Fresno, Clovis, and the Central Valley.",
   },

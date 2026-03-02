@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Commercial Pool Service",
+  title: "Commercial Pool Service (Fresno / Central Valley)",
+  description:
+    "Commercial pool service for apartments, hotels, schools, and gyms in Fresno, Clovis, and the Central Valley. Documented visits and responsive repairs.",
 };
 
 export default function CommercialPage() {
@@ -35,6 +37,12 @@ export default function CommercialPage() {
             <div className="mt-4 text-sm text-slate-600">
               Commercial agreements: <span className="font-semibold">12-month minimum</span>
             </div>
+            <p className="mt-6 text-sm text-slate-600">
+              If you’re searching for reliable <span className="font-semibold">commercial pool service</span>
+              in <span className="font-semibold">Fresno</span>, <span className="font-semibold">Clovis</span>, or
+              across the <span className="font-semibold">Central Valley</span>, we’re built for consistency:
+              documented visits, responsive repairs, and clear communication.
+            </p>
           </div>
         </Container>
       </Section>
