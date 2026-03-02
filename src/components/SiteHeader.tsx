@@ -52,9 +52,6 @@ export default function SiteHeader() {
               priority
             />
           </div>
-          <div className="hidden min-w-0 leading-tight lg:block">
-            <div className="truncate text-xs text-slate-600">Water systems • Central Valley</div>
-          </div>
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">
