@@ -40,9 +40,9 @@ function ButtonLink({
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <div className="flex w-full items-center justify-between gap-4 px-3 py-2">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <div className="relative h-12 w-[220px] sm:h-14 sm:w-[280px] md:h-16 md:w-[320px] flex-none">
+          <div className="relative h-16 w-[320px] sm:h-20 sm:w-[420px] md:h-24 md:w-[520px] flex-none">
             <Image
               src="/brand/logo.png"
               alt="Purified Services"
