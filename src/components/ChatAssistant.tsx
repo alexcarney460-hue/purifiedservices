@@ -109,7 +109,7 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="fixed bottom-20 right-4 z-[55] lg:bottom-6">
+    <div className="fixed bottom-24 right-4 z-[55] lg:bottom-6">
       {open && (
         <div className="mb-3 w-[min(92vw,380px)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
