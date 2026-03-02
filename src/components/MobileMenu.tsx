@@ -10,6 +10,7 @@ const links = [
   { href: "/water-treatment", label: "Water Treatment" },
   { href: "/wastewater", label: "Wastewater" },
   { href: "/service-areas", label: "Service Areas" },
+  { href: "/dashboard", label: "Portal" },
   { href: "/contact", label: "Request Service" },
 ];
 

@@ -42,6 +42,11 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link className="text-slate-600 hover:text-slate-950" href="/dashboard">
+                Portal
+              </Link>
+            </li>
+            <li>
               <Link className="text-slate-600 hover:text-slate-950" href="/contact">
                 Request Service
               </Link>

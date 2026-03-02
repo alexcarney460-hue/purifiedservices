@@ -62,6 +62,7 @@ export default function SiteHeader() {
           <NavLink href="/residential">Residential</NavLink>
           <NavLink href="/repair">Repair</NavLink>
           <NavLink href="/service-areas">Service Areas</NavLink>
+          <NavLink href="/dashboard">Portal</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </nav>
 
