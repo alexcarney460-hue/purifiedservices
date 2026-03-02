@@ -16,7 +16,7 @@ export default async function SchedulePage({
 }) {
   const { error } = await searchParams;
 
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const { data } = await supabase.auth.getUser();
 
   if (!data.user) redirect("/login");

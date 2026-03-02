@@ -8,7 +8,7 @@ import { isAdminEmail } from "@/lib/authz";
 export const metadata = { title: "Dashboard" };
 
 export default async function DashboardPage() {
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const { data } = await supabase.auth.getUser();
 
   const user = data.user;

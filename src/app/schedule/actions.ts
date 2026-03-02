@@ -13,7 +13,7 @@ export async function submitScheduleRequest(formData: FormData) {
     redirect(`/schedule?error=${encodeURIComponent("Preferred day must be Mon–Sat.")}`);
   }
 
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const { data: userRes, error: userErr } = await supabase.auth.getUser();
   if (userErr || !userRes.user) {
     redirect("/login");

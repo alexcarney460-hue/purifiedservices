@@ -9,7 +9,7 @@ import { isAdminEmail } from "@/lib/authz";
 export const metadata = { title: "Admin" };
 
 export default async function AdminPage() {
-  const supabase = createSupabaseServerClient();
+  const supabase = await createSupabaseServerClient();
   const { data } = await supabase.auth.getUser();
   const email = data.user?.email;
 
