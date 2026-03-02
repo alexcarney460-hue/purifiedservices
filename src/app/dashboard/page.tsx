@@ -13,6 +13,16 @@ export default async function DashboardPage() {
 
   const user = data.user;
 
+  const latestRequest = user
+    ? await supabase
+        .from("schedule_requests")
+        .select("preferred_day,status,assigned_day,assigned_window,created_at")
+        .eq("requester_user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle()
+    : null;
+
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
@@ -61,7 +71,7 @@ export default async function DashboardPage() {
 
       <Section>
         <Container>
-          <div className="mb-6 flex flex-wrap gap-3">
+          <div className="mb-6 flex flex-wrap items-center gap-3">
             <Link
               href="/schedule"
               className="rounded-xl bg-[var(--ps-navy)] px-5 py-3 text-sm font-semibold text-white"
@@ -75,6 +85,24 @@ export default async function DashboardPage() {
               New request
             </Link>
           </div>
+
+          {user && latestRequest?.data ? (
+            <div className="mb-6 rounded-3xl border border-slate-200 bg-[var(--ps-mist)] p-6 text-sm text-slate-700">
+              <div className="text-sm font-semibold text-slate-900">Latest scheduling request</div>
+              <div className="mt-1">
+                Preferred day: <span className="font-semibold">{latestRequest.data.preferred_day}</span>
+              </div>
+              <div className="mt-1">
+                Status: <span className="font-semibold">{latestRequest.data.status}</span>
+              </div>
+              {latestRequest.data.status === "approved" ? (
+                <div className="mt-1">
+                  Assigned: <span className="font-semibold">{latestRequest.data.assigned_day}</span>{" "}
+                  <span className="text-slate-500">({latestRequest.data.assigned_window || "time window TBD"})</span>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
 
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">

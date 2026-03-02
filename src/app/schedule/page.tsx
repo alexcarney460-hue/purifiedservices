@@ -3,19 +3,23 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { Container, H1, Lead, Section } from "@/components/ui";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { submitScheduleRequest } from "@/app/schedule/actions";
 
 export const metadata = { title: "Schedule" };
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] as const;
 
-export default async function SchedulePage() {
+export default async function SchedulePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const { error } = await searchParams;
+
   const supabase = createSupabaseServerClient();
   const { data } = await supabase.auth.getUser();
 
   if (!data.user) redirect("/login");
-
-  // v1: no properties UI yet. We'll create one default property per user later.
-  // For now show scheduling request intake.
 
   return (
     <div className="min-h-screen bg-white">
@@ -39,7 +43,13 @@ export default async function SchedulePage() {
       <Section>
         <Container>
           <div className="mx-auto max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <form className="grid gap-5" action="/thanks-residential">
+            {error ? (
+              <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                {decodeURIComponent(error)}
+              </div>
+            ) : null}
+
+            <form className="grid gap-5" action={submitScheduleRequest}>
               <label className="grid gap-2 text-sm">
                 <span className="font-semibold text-slate-900">Preferred day</span>
                 <select
