@@ -59,6 +59,28 @@ export default function RepairPage() {
               </ol>
             </div>
           </div>
+
+          <div className="mt-12 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="text-sm font-semibold text-[var(--ps-teal)]">FAQ</div>
+            <div className="mt-2 grid gap-4 md:grid-cols-2">
+              <div>
+                <div className="text-sm font-bold text-slate-950">How fast can you respond?</div>
+                <p className="mt-1 text-sm text-slate-600">Same-day response for urgent issues (Mon–Sat).</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">Do you provide an estimate?</div>
+                <p className="mt-1 text-sm text-slate-600">Yes—after diagnosis we’ll outline clear next steps and pricing.</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">What should I send when requesting repair?</div>
+                <p className="mt-1 text-sm text-slate-600">Your address/city, a short description of symptoms, and any photos of the equipment pad.</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">Do you work on pumps, filters, and heaters?</div>
+                <p className="mt-1 text-sm text-slate-600">Yes—those are common repairs we handle.</p>
+              </div>
+            </div>
+          </div>
         </Container>
       </Section>
 

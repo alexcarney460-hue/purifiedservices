@@ -53,14 +53,17 @@ export default function CommercialPage() {
               </ul>
             </div>
             <div>
-              <H2>What you get</H2>
+              <H2>Commercial-ready standards</H2>
               <ul className="mt-4 grid gap-2 text-sm text-slate-700">
-                <li>Scheduled service with standardized checklists</li>
-                <li>Chemical readings, notes, and photo documentation</li>
+                <li>Documented visits: photo logs + chemical readings</li>
                 <li>Same-day response for urgent issues (Mon–Sat)</li>
                 <li>Weekend coverage options</li>
                 <li>Repair recommendations with clear next steps</li>
+                <li>COI / W-9 available upon request</li>
               </ul>
+              <div className="mt-4 rounded-2xl border border-slate-200 bg-[var(--ps-mist)] p-4 text-sm text-slate-700">
+                <span className="font-semibold">Agreement terms:</span> 12-month minimum for commercial service.
+              </div>
             </div>
           </div>
         </Container>
@@ -90,6 +93,28 @@ export default function CommercialPage() {
               <p className="mt-2 text-sm text-slate-600">
                 Ongoing service with consistent documentation and fast issue escalation.
               </p>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="text-sm font-semibold text-[var(--ps-teal)]">FAQ</div>
+            <div className="mt-2 grid gap-4 md:grid-cols-2">
+              <div>
+                <div className="text-sm font-bold text-slate-950">Do you provide COI and W-9?</div>
+                <p className="mt-1 text-sm text-slate-600">Yes—available upon request.</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">Do you service multiple sites?</div>
+                <p className="mt-1 text-sm text-slate-600">Yes—multi-site property groups are a good fit.</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">What’s the minimum term?</div>
+                <p className="mt-1 text-sm text-slate-600">Commercial service agreements are 12-month minimum.</p>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-950">How fast do you respond to urgent issues?</div>
+                <p className="mt-1 text-sm text-slate-600">Same-day response for urgent issues (Mon–Sat).</p>
+              </div>
             </div>
           </div>
         </Container>
