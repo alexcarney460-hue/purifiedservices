@@ -14,12 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fresnopoolcare.com"),
   title: {
-    default: "Purified Services | Water Systems Service (Central Valley)",
+    default: "Purified Services | Fresno Pool Care",
     template: "%s | Purified Services",
   },
   description:
-    "Premium water systems service for the Central Valley: pools, water treatment, wastewater, and repair. Fresno • Clovis • Central Valley.",
+    "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
+  openGraph: {
+    type: "website",
+    url: "https://www.fresnopoolcare.com",
+    title: "Commercial & Residential Pool Service | Purified Services",
+    description:
+      "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial & Residential Pool Service | Purified Services",
+    description:
+      "Commercial and residential pool service across Fresno, Clovis, and the Central Valley.",
+  },
 };
 
 export default function RootLayout({
