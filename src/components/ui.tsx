@@ -16,7 +16,7 @@ export function Section({
 
 export function H1({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="text-balance text-3xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-4xl md:text-6xl">
+    <h1 className="text-balance text-3xl font-extrabold tracking-[-0.04em] text-[var(--ps-navy)] sm:text-4xl md:text-6xl">
       {children}
     </h1>
   );
@@ -24,7 +24,7 @@ export function H1({ children }: { children: React.ReactNode }) {
 
 export function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-balance text-2xl font-bold tracking-[-0.02em] text-slate-950 md:text-3xl">
+    <h2 className="text-balance text-2xl font-bold tracking-[-0.02em] text-[var(--ps-navy)] md:text-3xl">
       {children}
     </h2>
   );
@@ -47,8 +47,8 @@ export function Button({
     "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 active:translate-y-px";
   const styles =
     variant === "primary"
-      ? "bg-[var(--ps-navy)] text-white shadow-sm shadow-slate-900/10 hover:-translate-y-0.5 hover:bg-slate-950 hover:shadow-md hover:shadow-slate-900/10 focus:ring-[var(--ps-aqua)]"
-      : "border border-slate-200 bg-white text-slate-900 shadow-sm shadow-slate-900/5 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 focus:ring-[var(--ps-aqua)]";
+      ? "bg-[var(--ps-teal)] text-white shadow-sm shadow-slate-900/10 hover:-translate-y-0.5 hover:bg-[#006b77] hover:shadow-md hover:shadow-slate-900/10 focus:ring-[var(--ps-aqua)]"
+      : "border border-slate-200 bg-white text-[var(--ps-teal)] shadow-sm shadow-slate-900/5 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 focus:ring-[var(--ps-aqua)]";
   return (
     <Link href={href} className={`${base} ${styles}`}>
       {children}

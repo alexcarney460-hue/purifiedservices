@@ -29,8 +29,8 @@ function ButtonLink({
     "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2";
   const styles =
     variant === "primary"
-      ? "bg-[var(--ps-navy)] text-white hover:bg-slate-950 focus:ring-[var(--ps-aqua)]"
-      : "border border-slate-200 bg-white text-slate-900 hover:border-slate-300 hover:bg-slate-50 focus:ring-[var(--ps-aqua)]";
+      ? "bg-[var(--ps-teal)] text-white hover:bg-[#006b77] focus:ring-[var(--ps-aqua)]"
+      : "border border-slate-200 bg-white text-[var(--ps-teal)] hover:border-slate-300 hover:bg-slate-50 focus:ring-[var(--ps-aqua)]";
   return (
     <Link href={href} className={`${base} ${styles}`}>
       {children}
