@@ -40,9 +40,9 @@ function ButtonLink({
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-14 w-60 md:h-16 md:w-[520px]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <div className="relative h-12 w-[220px] sm:h-14 sm:w-[280px] md:h-16 md:w-[320px] flex-none">
             <Image
               src="/brand/logo.png"
               alt="Purified Services"
@@ -51,12 +51,12 @@ export default function SiteHeader() {
               priority
             />
           </div>
-          <div className="hidden leading-tight sm:block">
-            <div className="text-xs text-slate-600">Water systems • Central Valley</div>
+          <div className="hidden min-w-0 leading-tight lg:block">
+            <div className="truncate text-xs text-slate-600">Water systems • Central Valley</div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           <NavLink href="/commercial">Commercial</NavLink>
           <NavLink href="/residential">Residential</NavLink>
           <NavLink href="/repair">Repair</NavLink>
