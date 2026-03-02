@@ -68,6 +68,7 @@ export default function CommercialPage() {
                 <li>Weekend coverage options</li>
                 <li>Repair recommendations with clear next steps</li>
                 <li>COI / W-9 available upon request</li>
+                <li>Veteran-owned company</li>
               </ul>
               <div className="mt-4 rounded-2xl border border-slate-200 bg-[var(--ps-mist)] p-4 text-sm text-slate-700">
                 <span className="font-semibold">Agreement terms:</span> 12-month minimum for commercial service.

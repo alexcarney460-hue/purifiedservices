@@ -36,7 +36,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="mt-4 text-sm text-slate-600">
-                State certified in water treatment • Wastewater insured
+                Veteran-owned • State certified in water treatment • Wastewater insured
               </div>
             </div>
           </div>

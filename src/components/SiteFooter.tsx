@@ -64,7 +64,7 @@ export default function SiteFooter() {
       <div className="border-t border-slate-100">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Purified Services</div>
-          <div>State certified in water treatment • Wastewater insured</div>
+          <div>Veteran-owned • State certified in water treatment • Wastewater insured</div>
         </div>
       </div>
     </footer>
