@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Purified Services (premium/clean) */
+  --ps-navy: #071b2e;
+  --ps-teal: #007c8a;
+  --ps-aqua: #1fbad6;
+  --ps-mist: #eaf7fa;
+  --ps-white: #ffffff;
+  --ps-cta: #ff6a2a;
+
+  --background: var(--ps-white);
+  --foreground: #0b1220;
 }
 
 @theme inline {
@@ -12,15 +20,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, ui-sans-serif), system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ps-aqua) 30%, white);
 }
