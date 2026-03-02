@@ -44,7 +44,7 @@ export default function SiteHeader() {
         <Link href="/" className="flex min-w-0 items-center gap-3 pl-0">
           <div className="relative h-24 w-[520px] sm:h-28 sm:w-[680px] md:h-32 md:w-[780px] flex-none -mt-1">
             <Image
-              src="/brand/logo.png"
+              src="/brand/logo-cropped.png"
               alt="Purified Services"
               fill
               className="object-contain object-left"
