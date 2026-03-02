@@ -71,7 +71,7 @@ export default async function OpenGraphImage() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div style={{ fontSize: 22, color: "#0f172a", opacity: 0.7 }}>
-            www.fresnopoolcare.com
+fresnopoolcare.com
           </div>
           <div
             style={{

@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3005";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fresnopoolcare.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Purified Services | Fresno Pool Care",
     template: "%s | Purified Services",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
   openGraph: {
     type: "website",
-    url: "https://www.fresnopoolcare.com",
+    url: siteUrl,
     title: "Commercial & Residential Pool Service | Purified Services",
     description:
       "Commercial and residential pool service across Fresno, Clovis, and the Central Valley. Documented visits, responsive repairs, same-day urgent response (Mon–Sat).",
