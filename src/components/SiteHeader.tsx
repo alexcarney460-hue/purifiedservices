@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "@/components/MobileMenu";
 
 const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
@@ -65,12 +66,17 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ButtonLink href="/contact" variant="primary">
-            Request Service
-          </ButtonLink>
-          <ButtonLink href={`sms:+${phoneDigits}`} variant="secondary">
-            Text {phoneDisplay}
-          </ButtonLink>
+          <MobileMenu />
+          <div className="hidden sm:block">
+            <ButtonLink href="/contact" variant="primary">
+              Request Service
+            </ButtonLink>
+          </div>
+          <div className="hidden sm:block">
+            <ButtonLink href={`sms:+${phoneDigits}`} variant="secondary">
+              Text {phoneDisplay}
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </header>
