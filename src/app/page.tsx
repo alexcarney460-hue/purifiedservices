@@ -90,7 +90,7 @@ export default function Home() {
       </Section>
 
       {/* Services */}
-      <Section>
+      <Section className="-mt-10 sm:-mt-14">
         <Container>
           <div className="max-w-2xl">
             <H2>Services</H2>
