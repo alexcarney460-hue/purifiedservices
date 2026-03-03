@@ -11,20 +11,29 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <Section className="bg-[linear-gradient(180deg,var(--ps-mist),white)]">
+      <Section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url(/brand/hero.jpg)" }}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.82)_55%,rgba(255,255,255,0.35)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--ps-mist),rgba(255,255,255,0.15))]" />
+        </div>
+
         <Container>
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700">
+          <div className="relative max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-800 backdrop-blur">
               Fresno • Clovis • Central Valley
               <span className="text-slate-300">|</span>
               Same-day urgent response (Mon–Sat)
             </div>
             <div className="mt-6">
-              <H1>Premium water systems service for the Central Valley</H1>
+              <H1>Commercial & residential pool service</H1>
               <div className="mt-5">
                 <Lead>
-                  Pools, water treatment, and wastewater support—delivered with consistent
-                  documentation, responsive service, and repair-ready expertise.
+                  Documented visits, responsive repairs, and professional standards for facilities
+                  and homeowners across Fresno, Clovis, and the Central Valley.
                 </Lead>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -35,7 +44,7 @@ export default function Home() {
                   Text {phoneDisplay}
                 </Button>
               </div>
-              <div className="mt-4 text-sm text-slate-600">
+              <div className="mt-4 text-sm text-slate-700">
                 Veteran-owned • State certified in water treatment • Wastewater insured
               </div>
             </div>
