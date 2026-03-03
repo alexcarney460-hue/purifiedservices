@@ -11,18 +11,11 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <Section className="relative overflow-hidden py-16 sm:py-20">
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url(/brand/hero.jpg)" }}
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.82)_55%,rgba(255,255,255,0.35)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--ps-mist),rgba(255,255,255,0.15))]" />
-        </div>
+      <Section className="relative overflow-hidden py-12 sm:py-16">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--ps-mist),white_70%)]" />
 
         <Container>
-          <div className="relative max-w-3xl py-10 sm:py-14">
+          <div className="relative max-w-3xl py-6 sm:py-10">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-800 backdrop-blur">
               Fresno • Clovis • Central Valley
               <span className="text-slate-300">|</span>
@@ -36,11 +29,11 @@ export default function Home() {
                   and homeowners across Fresno, Clovis, and the Central Valley.
                 </Lead>
               </div>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/contact" variant="primary">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Button href="/contact" variant="primary" className="w-full sm:w-auto">
                   Request Service
                 </Button>
-                <Button href={`sms:+${phoneDigits}`} variant="secondary">
+                <Button href={`sms:+${phoneDigits}`} variant="secondary" className="w-full sm:w-auto">
                   Text {phoneDisplay}
                 </Button>
               </div>
@@ -51,7 +44,7 @@ export default function Home() {
           </div>
 
           {/* Path chooser */}
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md hover:shadow-slate-900/10">
               <div className="text-xs font-semibold tracking-wide text-[var(--ps-teal)]">
                 Commercial / Institutional

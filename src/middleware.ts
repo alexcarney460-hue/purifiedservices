@@ -8,10 +8,12 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  // If env vars aren't configured (common on local dev machines), skip auth refresh.
+  if (supabaseUrl && supabaseAnonKey && !supabaseAnonKey.startsWith("sb_publishable_")) {
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
       cookies: {
         getAll() {
           return request.cookies.getAll();
@@ -22,11 +24,11 @@ export async function middleware(request: NextRequest) {
           });
         },
       },
-    }
-  );
+    });
 
-  // Refresh auth cookie if needed.
-  await supabase.auth.getUser();
+    // Refresh auth cookie if needed.
+    await supabase.auth.getUser();
+  }
 
   return response;
 }
