@@ -92,14 +92,15 @@ export default function Home() {
       {/* Services */}
       <Section className="-mt-10 sm:-mt-14">
         <Container>
-          <div className="max-w-2xl">
-            <H2>Services</H2>
-            <p className="mt-3 text-sm text-slate-600">
-              Premium service across pools, treatment, and wastewater—built around documentation,
-              responsiveness, and repair capability.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-md shadow-slate-900/10 backdrop-blur sm:p-8">
+            <div className="max-w-2xl">
+              <H2>Services</H2>
+              <p className="mt-3 text-sm text-slate-600">
+                Premium service across pools, treatment, and wastewater—built around documentation,
+                responsiveness, and repair capability.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
             <Card
               title="Commercial Pool Service"
               description="Consistent chemistry, documented visits, and facility-ready processes."
@@ -131,6 +132,7 @@ export default function Home() {
               href="/service-areas"
             />
           </div>
+        </div>
         </Container>
       </Section>
 
