@@ -11,7 +11,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <Section className="relative overflow-hidden">
+      <Section className="relative overflow-hidden py-16 sm:py-20">
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -22,7 +22,7 @@ export default function Home() {
         </div>
 
         <Container>
-          <div className="relative max-w-3xl">
+          <div className="relative max-w-3xl py-10 sm:py-14">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-800 backdrop-blur">
               Fresno • Clovis • Central Valley
               <span className="text-slate-300">|</span>
