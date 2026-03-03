@@ -6,7 +6,7 @@ const phoneDisplay = "559-519-0335";
 export default function MobileCtaBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/85 backdrop-blur lg:hidden">
-      <div className="mx-auto flex max-w-6xl gap-2 px-3 py-3">
+      <div className="mx-auto flex max-w-6xl gap-2 px-3 py-2">
         <Link
           href="/contact"
           className="flex-1 rounded-xl bg-[var(--ps-navy)] px-4 py-3 text-center text-sm font-semibold text-white"

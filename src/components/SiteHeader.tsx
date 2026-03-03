@@ -41,9 +41,9 @@ function ButtonLink({
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <div className="relative h-7 w-[130px] sm:h-9 sm:w-[180px] md:h-10 md:w-[210px] flex-none">
+          <div className="relative h-8 w-[170px] sm:h-10 sm:w-[240px] md:h-10 md:w-[240px] flex-none">
             <Image
               src="/brand/logo-fresno.png"
               alt="Purified Services"

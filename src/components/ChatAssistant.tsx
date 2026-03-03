@@ -109,7 +109,7 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="fixed bottom-24 right-4 z-[55] lg:bottom-6">
+    <div className="fixed bottom-28 right-4 z-[55] lg:bottom-6">
       {open && (
         <div className="mb-3 w-[min(92vw,380px)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
@@ -179,7 +179,7 @@ export default function ChatAssistant() {
 
       <button
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-2 rounded-full bg-[var(--ps-navy)] px-4 py-3 text-sm font-semibold text-white shadow-lg"
+        className="inline-flex items-center gap-2 rounded-full bg-[var(--ps-teal)] px-4 py-3 text-sm font-semibold text-white shadow-lg"
         aria-label="Open assistant"
       >
         Chat
