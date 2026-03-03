@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { Button, Container, H1, Lead, Section } from "@/components/ui";
@@ -9,48 +8,11 @@ import QuickChips from "@/components/QuickChips";
 const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
-function Field({
-  label,
-  name,
-  placeholder,
-  required,
-  type,
-}: {
-  label: string;
-  name: string;
-  placeholder?: string;
-  required?: boolean;
-  type?: string;
-}) {
-  return (
-    <label className="grid gap-2 text-sm">
-      <span className="font-semibold text-slate-900">
-        {label} {required ? <span className="text-slate-400">(required)</span> : null}
-      </span>
-      <input
-        name={name}
-        placeholder={placeholder}
-        required={required}
-        type={type}
-        className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
-      />
-    </label>
-  );
-}
-
 export default function ContactPage() {
-  const commercialNotesRef = useRef<HTMLTextAreaElement | null>(null);
-  const residentialNotesRef = useRef<HTMLTextAreaElement | null>(null);
-
   function applyChip(value: string) {
-    // Put chip selection into the most relevant notes field.
-    // Default to residential notes unless commercial form is visible/used.
-    const target = residentialNotesRef.current || commercialNotesRef.current;
-    if (!target) return;
-
-    const current = target.value?.trim();
-    target.value = current ? `${current}\n${value}` : value;
-    target.focus();
+    // Placeholder: chips still provide intent, but forms are now on separate pages.
+    // We keep chips visible here for speed and future prefill routing.
+    void value;
   }
 
   return (
@@ -91,82 +53,36 @@ export default function ContactPage() {
 
       <Section>
         <Container>
-          <div className="grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="text-sm font-semibold text-[var(--ps-teal)]">Commercial / Facility quote</div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <Field
-                label="Organization"
-                name="org"
-                placeholder="School, hotel, apartment community…"
-                required
-              />
-              <Field label="Contact name" name="contact" placeholder="Full name" required />
-              <Field label="Phone" name="phone" placeholder="(559) 519-0335" required type="tel" />
-              <Field label="Email" name="email" placeholder="name@company.com" type="email" />
-              <Field label="Site address(es)" name="sites" placeholder="Address or list of sites" required />
-              <Field label="Pool/spa count" name="pool_count" placeholder="e.g., 1 pool + 1 spa" required />
-              <Field label="Access constraints" name="access" placeholder="Gates, keys, after-hours rules…" />
-              <Field
-                label="Best time to contact"
-                name="best_time"
-                placeholder="e.g., weekdays 9–12, or anytime"
-              />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="text-xs font-semibold tracking-wide text-[var(--ps-teal)]">Commercial</div>
+              <div className="mt-2 text-lg font-bold tracking-tight text-[var(--ps-navy)]">
+                Facility walkthrough quote
+              </div>
+              <p className="mt-2 text-sm text-slate-600">
+                Apartments, hotels, schools, and gyms. 12-month agreements.
+              </p>
+              <div className="mt-5">
+                <Button href="/request/commercial" variant="primary">
+                  Request commercial quote
+                </Button>
+              </div>
             </div>
-            <label className="grid gap-2 text-sm">
-              <span className="font-semibold text-slate-900">Walkthrough availability + notes</span>
-              <textarea
-                ref={(el) => {
-                  commercialNotesRef.current = el;
-                }}
-                name="notes"
-                placeholder="Best days/times for a walkthrough, access notes, current issues, desired start date…"
-                rows={5}
-                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
-              />
-            </label>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="/thanks-commercial" variant="primary">
-                Submit request
-              </Button>
-              <div className="text-xs text-slate-500">12-month minimum agreements for commercial service.</div>
-            </div>
-          </div>
 
-          <div className="mt-8 grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="text-sm font-semibold text-[var(--ps-teal)]">Residential request</div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Full name" required />
-              <Field label="Phone" name="res_phone" placeholder="(559) 519-0335" required type="tel" />
-              <Field label="Address" name="address" placeholder="Street address" required />
-              <Field label="City" name="city" placeholder="Fresno, Clovis, etc." required />
-              <Field
-                label="Service needed"
-                name="service"
-                placeholder="Weekly service, repair, green-to-clean…"
-                required
-              />
-              <Field label="Urgency" name="urgency" placeholder="Today / this week / this month" />
-              <Field
-                label="Best time to contact"
-                name="res_best_time"
-                placeholder="e.g., weekdays after 5, or anytime"
-              />
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="text-xs font-semibold tracking-wide text-[var(--ps-teal)]">Residential</div>
+              <div className="mt-2 text-lg font-bold tracking-tight text-[var(--ps-navy)]">
+                Pool service request
+              </div>
+              <p className="mt-2 text-sm text-slate-600">
+                Weekly service, repair requests, or green pool recovery.
+              </p>
+              <div className="mt-5">
+                <Button href="/request/residential" variant="primary">
+                  Request residential service
+                </Button>
+              </div>
             </div>
-            <label className="grid gap-2 text-sm">
-              <span className="font-semibold text-slate-900">Notes</span>
-              <textarea
-                ref={(el) => {
-                  residentialNotesRef.current = el;
-                }}
-                name="res_notes"
-                placeholder="Anything we should know about access, equipment, or current issues?"
-                rows={5}
-                className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--ps-aqua)]"
-              />
-            </label>
-            <Button href="/thanks-residential" variant="primary">
-              Submit request
-            </Button>
           </div>
         </Container>
       </Section>
