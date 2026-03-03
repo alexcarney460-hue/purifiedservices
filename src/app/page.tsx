@@ -90,7 +90,7 @@ export default function Home() {
       </Section>
 
       {/* Services */}
-      <Section className="-mt-10 sm:-mt-14">
+      <Section className="-mt-16 sm:-mt-14">
         <Container>
           <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-md shadow-slate-900/10 backdrop-blur sm:p-8">
             <div className="max-w-2xl">
