@@ -12,7 +12,6 @@ export default function Home() {
 
       {/* Hero */}
       <Section className="relative overflow-hidden py-12 sm:py-16">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--ps-mist),white_70%)]" />
 
         <Container>
           <div className="relative max-w-3xl py-6 sm:py-10">
@@ -130,7 +129,7 @@ export default function Home() {
       </Section>
 
       {/* Why */}
-      <Section className="bg-[var(--ps-mist)]">
+      <Section>
         <Container>
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
@@ -183,7 +182,7 @@ export default function Home() {
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-[linear-gradient(180deg,white,var(--ps-mist))]">
+      <Section>
         <Container>
           <div className="rounded-3xl border border-slate-200 bg-white p-10 shadow-sm">
             <div className="grid gap-6 md:grid-cols-2 md:items-center">
