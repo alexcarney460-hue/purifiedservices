@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Water Treatment",
+  title: "Water Treatment Services in Fresno & Central Valley",
+  description:
+    "Professional water treatment services with state-certified expertise. Documentation-first approach for pools, facilities, and commercial properties across Fresno, Clovis, and the Central Valley.",
 };
 
 export default function WaterTreatmentPage() {

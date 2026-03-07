@@ -1,28 +1,17 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3005";
-  const routes = [
-    "",
-    "/commercial",
-    "/residential",
-    "/repair",
-    "/water-treatment",
-    "/wastewater",
-    "/service-areas",
-    "/contact",
-    "/signup",
-    "/login",
-    "/dashboard",
-    "/schedule",
-  ];
-
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://fresnopoolcare.com";
   const now = new Date();
 
-  return routes.map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: path === "" ? 1 : 0.6,
-  }));
+  return [
+    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/commercial`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/residential`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/repair`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/water-treatment`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/wastewater`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/service-areas`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+  ];
 }

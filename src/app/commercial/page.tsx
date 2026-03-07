@@ -11,9 +11,40 @@ export const metadata = {
     "Commercial pool service for apartments, hotels, schools, and gyms in Fresno, Clovis, and the Central Valley. Documented visits and responsive repairs.",
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you provide COI and W-9?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes—available upon request." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you service multiple sites?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes—multi-site property groups are a good fit." },
+    },
+    {
+      "@type": "Question",
+      name: "What's the minimum term?",
+      acceptedAnswer: { "@type": "Answer", text: "Commercial service agreements are 12-month minimum." },
+    },
+    {
+      "@type": "Question",
+      name: "How fast do you respond to urgent issues?",
+      acceptedAnswer: { "@type": "Answer", text: "Same-day response for urgent issues (Mon–Sat)." },
+    },
+  ],
+};
+
 export default function CommercialPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <SiteHeader />
 
       <Section className="bg-[linear-gradient(180deg,var(--ps-mist),white)]">

@@ -11,9 +11,40 @@ export const metadata = {
     "Pool repair and diagnostics in Fresno, Clovis, and the Central Valley. Pumps, filters, heaters, leaks. Same-day urgent response (Mon–Sat).",
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How fast can you respond?",
+      acceptedAnswer: { "@type": "Answer", text: "Same-day response for urgent issues (Mon–Sat)." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide an estimate?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes—after diagnosis we'll outline clear next steps and pricing." },
+    },
+    {
+      "@type": "Question",
+      name: "What should I send when requesting repair?",
+      acceptedAnswer: { "@type": "Answer", text: "Your address/city, a short description of symptoms, and any photos of the equipment pad." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you work on pumps, filters, and heaters?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes—those are common repairs we handle." },
+    },
+  ],
+};
+
 export default function RepairPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <SiteHeader />
 
       <Section className="bg-[linear-gradient(180deg,var(--ps-mist),white)]">

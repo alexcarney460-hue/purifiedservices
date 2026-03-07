@@ -6,7 +6,9 @@ const phoneDigits = "15595190335";
 const phoneDisplay = "559-519-0335";
 
 export const metadata = {
-  title: "Wastewater",
+  title: "Wastewater Services | Insured Wastewater Support in Fresno",
+  description:
+    "Wastewater-insured pool and facility support with a safety-first approach. Serving Fresno, Clovis, and the Central Valley with certified, documented wastewater services.",
 };
 
 export default function WastewaterPage() {
