@@ -66,13 +66,13 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2">
           <MobileMenu />
           <div className="hidden sm:block">
-            <ButtonLink href="/contact" variant="primary">
-              Request Service
+            <ButtonLink href="/login" variant="secondary">
+              Log in
             </ButtonLink>
           </div>
           <div className="hidden sm:block">
-            <ButtonLink href={`sms:+${phoneDigits}`} variant="secondary">
-              Text {phoneDisplay}
+            <ButtonLink href="/signup" variant="primary">
+              Sign up
             </ButtonLink>
           </div>
         </div>

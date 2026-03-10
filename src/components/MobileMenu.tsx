@@ -71,6 +71,23 @@ export default function MobileMenu() {
               ))}
             </nav>
 
+            <div className="mt-4 grid gap-2">
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-[var(--ps-teal)] hover:bg-slate-50"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-10 items-center justify-center rounded-xl bg-[var(--ps-teal)] px-4 text-sm font-semibold text-white hover:bg-[#006b77]"
+              >
+                Sign up
+              </Link>
+            </div>
+
             <div className="mt-4 text-xs text-slate-500">
               Same-day response for urgent issues (Mon–Sat).
             </div>
